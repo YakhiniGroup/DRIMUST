@@ -281,7 +281,7 @@ public class MotifSearchTester {
 		PrintWriter out1 = null;
 		String fileName2 = "";
 		
-		if (args.length == 7) 
+		if (args.length == 6) 
 		{
 		    k1 = Integer.parseInt(args[0]);
 		    k2 = Integer.parseInt(args[1]);
@@ -289,11 +289,11 @@ public class MotifSearchTester {
 		    stringency = Float.parseFloat(args[3]);
 		    fstream = new FileInputStream(args[4]);
 		    out1 = new PrintWriter(args[5]);
-		    fileName2 = args[6];
+//		    fileName2 = args[6];
 		}
 		else
 		{
-			System.err.println("You must give seven arguments as input");
+			System.err.println("You must give six arguments as input");
 	        System.exit(1);
 		}
 		if(dsMode)
@@ -353,9 +353,10 @@ public class MotifSearchTester {
 		}
 		out1.flush();
 		out1.close();
-		outputClusters(fileName2, motiflist, sequences, stringency, 3);
-		long after1 = System.currentTimeMillis();
-		System.out.println("Total time of fbfs clustering: " + ((float)(after1-after)/60000)  + " minutes");
+// Leon: Disable for Inbal 161126
+//		outputClusters(fileName2, motiflist, sequences, stringency, 3);
+//		long after1 = System.currentTimeMillis();
+//      System.out.println("Total time of fbfs clustering: " + ((float)(after1-after)/60000)  + " minutes");
 	}
 
 	public static List<MotifsMapEntry> asArrayList(List<MotifsMapEntry> l)
